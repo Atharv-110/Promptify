@@ -1,30 +1,29 @@
-import "@styles/globals.css";
 
-// Components Import
-import Navbar from "@components/Navbar";
+import Nav from "@components/Nav";
+import Footer from "@components/Footer";
 import Provider from "@components/Provider";
+import "@styles/globals.css";
 
 export const metadata = {
   title: "Promptify",
-  description: "Discover and Share AI Prompts",
+  description: "Discover & Share AI Prompts",
 };
 
-const RootLayout = ({ children }) => {
-  return (
-    <html lang="en">
-      <body>
-        <Provider>
-          <div className="main">
-            <div className="gradient" />
-          </div>
-          <main className="app">
-            <Navbar />
-            {children}
-          </main>
-        </Provider>
-      </body>
-    </html>
-  );
-};
+const RootLayout = ({ children }) => (
+  <html lang='en'>
+    <body>
+      <Provider>
+        <div className='main bg-primary-white'>
+        </div>
+
+        <main className='app'>
+          <Nav />
+          {children}
+          <Footer />
+        </main>
+      </Provider>
+    </body>
+  </html>
+);
 
 export default RootLayout;

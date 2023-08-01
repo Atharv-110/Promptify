@@ -8,11 +8,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ['Satoshi', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        satoshi: ['Poppins', 'sans-serif'],
+        inter: ['Open Sans', 'sans-serif'],
       },
       colors: {
-        'primary-orange': '#FF5722',
+        'primary-black': '#212529',
+        'primary-white': '#F5F7F8',
+        'gray-light': '#D0D5D9',
+        'gray-dark': '#6C757D',
+        'gray-darker': '#495057'
       }
     },
   },
