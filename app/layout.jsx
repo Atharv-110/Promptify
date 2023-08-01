@@ -6,7 +6,7 @@ import "@styles/globals.css";
 
 export const metadata = {
   title: "Promptify",
-  description: "Discover & Share AI Prompts",
+  description: "Discover, Share & Create AI-Driven Prompts",
 };
 
 const RootLayout = ({ children }) => (
