@@ -41,11 +41,11 @@
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-primary-black sm:text-6xl;
+  @apply mt-5 text-5xl font-semibold leading-[1.15] text-primary-black sm:text-6xl;
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-gray-darker via-gray-dark to-gray-light bg-clip-text text-transparent;
+  @apply bg-gradient-to-r font-bold from-gray-darker via-gray-dark to-gray-400/60 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -61,7 +61,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-400 sm:text-xl max-w-2xl;
+  @apply mt-5 text-lg text-gray-400 sm:text-lg max-w-3xl;
 }
 
 .search_input {
@@ -96,7 +96,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-extrabold text-xl text-primary-black tracking-wider;
+  @apply max-sm:hidden font-satoshi font-medium text-2xl text-primary-black uppercase tracking-widest;
 }
 
 .dropdown {
