@@ -44,7 +44,7 @@
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r font-bold from-gray-darker via-gray-dark to-gray-500/40 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r font-bold from-gray-darker via-gray-dark to-gray-500/50 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -81,7 +81,7 @@
 
 /* Feed Component */
 .feed {
-  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+  @apply mt-10 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
 /* Form Component */
@@ -95,7 +95,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-medium text-2xl text-primary-black uppercase tracking-widest;
+  @apply max-sm:hidden font-poppins font-medium text-2xl text-primary-black uppercase tracking-widest;
 }
 
 .dropdown {
@@ -127,23 +127,29 @@
   @apply flex justify-between items-center;
 }
 
+/* Footer component */
+.footer_icon {
+  @apply border cursor-pointer border-gray-dark transition-all shadow-md rounded-lg p-2 flex items-center justify-center mr-2 hover:scale-105;
+}
+
+
 /* Custom scrollbar */
-/* width
+/* width */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 /* Track */
-/* ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   @apply bg-gray-light;
-} */
+}
  
 /* Handle */
-/* ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   @apply bg-gray-darker;
-} */
+}
 
 /* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-black;
-} */
+}
