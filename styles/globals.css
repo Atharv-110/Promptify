@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -18,7 +18,6 @@
   padding: 120px 24px 160px 24px;
 }
 
-
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
@@ -32,23 +31,19 @@
 }
 
 .black_btn {
-  @apply rounded-md border border-gray-dark bg-primary-black py-2 px-5 text-primary-white transition-all hover:bg-primary-white hover:text-primary-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-md border border-gray-dark bg-primary-black py-2 px-5 text-primary-white transition-all hover:bg-primary-white hover:text-primary-black text-center text-sm font-opensans flex items-center justify-center;
 }
 
 .outline_btn {
-  @apply rounded-md border border-gray-dark bg-transparent py-2 px-5 text-primary-black transition-all hover:bg-primary-black hover:text-primary-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-md border border-gray-dark bg-transparent py-2 px-5 text-primary-black transition-all hover:bg-primary-black hover:text-primary-white text-center text-sm font-opensans flex items-center justify-center;
 }
 
 .head_text {
-  @apply mt-5 text-6xl font-semibold leading-[1.15] text-primary-black sm:text-5xl max-sm:text-5xl;
+  @apply mt-1 text-6xl font-semibold leading-[1.15] text-primary-black sm:text-5xl;
 }
 
-.orange_gradient {
+.gray_gradient {
   @apply bg-gradient-to-r font-bold from-gray-darker via-gray-dark to-gray-500/50 bg-clip-text text-transparent;
-}
-
-.green_gradient {
-  @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
 }
 
 .blue_gradient {
@@ -56,15 +51,15 @@
 }
 
 .head_text_gradient {
-  @apply bg-gradient-to-r from-gray-darker via-gray-dark to-gray-500/40 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-gray-darker via-gray-dark to-gray-500/50 bg-clip-text text-transparent;
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-400 sm:text-[1.07rem] max-w-3xl;
+  @apply mt-5 text-lg text-gray-400 sm:text-[1.07rem] max-w-3xl max-sm:text-sm;
 }
 
 .search_input {
-  @apply block w-full rounded-lg border border-gray-100 bg-white py-2.5 font-inter pl-5 pr-12 text-sm shadow-md font-medium transition-all focus:shadow-lg focus:scale-[1.015] focus:transition focus:outline-none focus:ring-0;
+  @apply block w-full rounded-lg border border-gray-100 bg-white py-2.5 font-opensans pl-5 pr-12 text-sm shadow-md font-medium transition-all focus:shadow-lg focus:scale-[1.015] focus:transition focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
@@ -86,11 +81,11 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex bg-primary-white rounded-lg h-[200px] mt-2 p-3 text-sm font-medium text-gray-darker outline-0;
+  @apply w-full flex bg-primary-white rounded-lg h-[200px] mt-2 p-3 text-sm font-opensans text-primary-black outline-0;
 }
 
 .form_input {
-  @apply w-full flex bg-primary-white rounded-lg mt-2 p-3 text-sm font-medium text-gray-darker outline-0;
+  @apply w-full flex bg-primary-white rounded-lg mt-2 p-3 text-sm font-opensans text-primary-black outline-0;
 }
 
 /* Nav Component */
@@ -103,7 +98,7 @@
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm font-opensans text-gray-700 hover:text-gray-500 font-medium;
 }
 
 /* PromptCard Component */
@@ -129,9 +124,8 @@
 
 /* Footer component */
 .footer_icon {
-  @apply border cursor-pointer border-gray-dark transition-all shadow-md rounded-lg p-2 flex items-center justify-center mr-2 hover:scale-105;
+  @apply border cursor-pointer border-gray-dark transition-all shadow-md rounded-lg p-2 flex items-center justify-center mr-3 hover:scale-105 hover:transition hover:shadow-lg hover:blur-0;
 }
-
 
 /* Custom scrollbar */
 /* width */
@@ -143,7 +137,7 @@
 ::-webkit-scrollbar-track {
   @apply bg-gray-light;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   @apply bg-gray-darker;

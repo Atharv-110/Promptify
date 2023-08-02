@@ -16,8 +16,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'
       >
         <label>
-          <span className='font-poppins font-semibold text-base text-primary-black'>
-            Your AI Prompt
+          <span className='font-poppins font-medium text-base text-primary-black'>
+            Write AI Prompt
           </span>
 
           <textarea
@@ -30,10 +30,10 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </label>
 
         <label>
-          <span className='font-poppins font-semibold text-base text-primary-black'>
+          <span className='font-poppins font-medium text-base text-primary-black'>
             Tag of Prompt{" "}
-            <span className='font-normal'>
-              (#product, #webdevelopment, #idea, etc.)
+            <span className='font-normal text-[13px]'>
+              [#designing, #engineering, #placement, etc.]
             </span>
           </span>
           <input

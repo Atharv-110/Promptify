@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
-        inter: ['Open Sans', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
       },
       colors: {
         'primary-black': '#212529',
