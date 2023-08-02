@@ -39,7 +39,7 @@
 }
 
 .head_text {
-  @apply mt-1 text-6xl font-semibold leading-[1.15] text-primary-black sm:text-5xl;
+  @apply mt-1 text-6xl font-semibold leading-[1.15] text-primary-black sm:text-5xl max-sm:text-4xl;
 }
 
 .gray_gradient {
