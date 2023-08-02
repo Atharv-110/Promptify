@@ -16,7 +16,6 @@
   display: flex;
   justify-content: center;
   padding: 120px 24px 160px 24px;
-  pointer-events: none;
 }
 
 
@@ -41,11 +40,11 @@
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-semibold leading-[1.15] text-primary-black sm:text-6xl;
+  @apply mt-5 text-6xl font-semibold leading-[1.15] text-primary-black sm:text-5xl max-sm:text-5xl;
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r font-bold from-gray-darker via-gray-dark to-gray-400/60 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r font-bold from-gray-darker via-gray-dark to-gray-500/40 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -57,19 +56,19 @@
 }
 
 .head_text_gradient {
-  @apply bg-gradient-to-r from-gray-darker via-gray-dark to-gray-light bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-gray-darker via-gray-dark to-gray-500/40 bg-clip-text text-transparent;
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-400 sm:text-lg max-w-3xl;
+  @apply mt-5 text-lg text-gray-400 sm:text-[1.07rem] max-w-3xl;
 }
 
 .search_input {
-  @apply block w-full rounded-lg border border-gray-300 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-sm font-medium transition-all focus:shadow-lg focus:transition focus:outline-none focus:ring-0;
+  @apply block w-full rounded-lg border border-gray-100 bg-white py-2.5 font-inter pl-5 pr-12 text-sm shadow-md font-medium transition-all focus:shadow-lg focus:scale-[1.015] focus:transition focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
-  @apply w-8 h-8 rounded-full bg-transparent border transition-all border-gray-light shadow-md hover:border-gray-dark flex justify-center items-center cursor-pointer;
+  @apply w-8 h-8 rounded-full bg-transparent border transition-all border-gray-light shadow-md hover:border-gray-dark hover:scale-90 flex justify-center items-center cursor-pointer;
 }
 
 .glassmorphism {
@@ -126,4 +125,25 @@
 
 .flex-between {
   @apply flex justify-between items-center;
+}
+
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-light;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-darker;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-black;
 }
