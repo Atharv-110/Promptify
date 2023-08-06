@@ -17,7 +17,7 @@
 7. User will experience very minimal and easy to access & use UI.
 8. _Promptify is fully responsive_, accessible through all the devices.
 
-# Tech Stack with Description
+# Tech Stack
 1. **NextJS:** Promptify employs NextJS, an advanced React framework, with server-rendered pages and dynamic routing for seamless, intuitive interactions.
 2. **MongoDB:** User and prompt data is vital, enhanced by MongoDB's adaptable NoSQL database.
 3. **NextAuth.js:** Seamless access is ensured with integrated NextAuth.js, enabling direct Google authentication for effortless sign-ins, sign-ups, and sign-outs.
