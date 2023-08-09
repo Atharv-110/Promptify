@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
+
 
 import Form from "@components/Form";
 
@@ -29,6 +31,17 @@ const CreatePrompt = () => {
 
       if (response.ok) {
         router.push("/");
+        toast.success("Prompt Created!", {
+          style: {
+            borderRadius: "12px",
+            background: "#FFF",
+            color: "#495057",
+          },
+          iconTheme: {
+            primary: "#495057",
+            secondary: "#F5F7F8",
+          },
+        });
       }
     } catch (error) {
       console.log(error);

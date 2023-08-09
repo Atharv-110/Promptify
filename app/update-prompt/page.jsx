@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 import Form from "@components/Form";
 
@@ -10,7 +11,7 @@ const UpdatePrompt = () => {
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
 
-  const [post, setPost] = useState({ prompt: "", tag: "", });
+  const [post, setPost] = useState({ prompt: "", tag: "" });
   const [submitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -44,6 +45,17 @@ const UpdatePrompt = () => {
 
       if (response.ok) {
         router.push("/");
+        toast.success("Prompt Edited", {
+          style: {
+            borderRadius: "12px",
+            background: "#FFF",
+            color: "#495057",
+          },
+          iconTheme: {
+            primary: "#495057",
+            secondary: "#F5F7F8",
+          },
+        });
       }
     } catch (error) {
       console.log(error);
@@ -54,7 +66,7 @@ const UpdatePrompt = () => {
 
   return (
     <Form
-      type='Edit'
+      type="Edit"
       post={post}
       setPost={setPost}
       submitting={submitting}

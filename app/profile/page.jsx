@@ -3,6 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 import Profile from "@components/Profile";
 
@@ -37,10 +38,21 @@ const MyProfile = () => {
         await fetch(`/api/prompt/${post._id.toString()}`, {
           method: "DELETE",
         });
-
+        
         const filteredPosts = myPosts.filter((item) => item._id !== post._id);
 
         setMyPosts(filteredPosts);
+        toast.success("Deleted", {
+          style: {
+            borderRadius: "12px",
+            background: "#FFF",
+            color: "#495057",
+          },
+          iconTheme: {
+            primary: "#495057",
+            secondary: "#F5F7F8",
+          },
+        });
       } catch (error) {
         console.log(error);
       }

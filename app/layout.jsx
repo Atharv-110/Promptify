@@ -2,6 +2,7 @@ import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import Provider from "@components/Provider";
 import "@styles/globals.css";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Promptify",
@@ -17,6 +18,7 @@ const RootLayout = ({ children }) => (
           <main className="app">
             <Nav />
             {children}
+            <Toaster position="top-center" reverseOrder={false} />
             <Footer />
           </main>
         </Provider>

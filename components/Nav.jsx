@@ -24,8 +24,8 @@ const Nav = () => {
         <Image
           src='/assets/images/logo.svg'
           alt='logo'
-          width={45}
-          height={45}
+          width={40}
+          height={40}
           className='object-contain'
         />
         <p className='logo_text'>Promptify</p>
@@ -36,19 +36,19 @@ const Nav = () => {
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             <Link href='/create-prompt' className='black_btn'>
-              Create Post
+              Create
             </Link>
 
             <button type='button' onClick={signOut} className='outline_btn'>
-              Sign Out
+              Logout
             </button>
 
             <Link href='/profile'>
               <Image
-                src={session?.user.image}
-                width={45}
-                height={45}
-                className='rounded-md'
+                src={session?.user?.image}
+                width={40}
+                height={40}
+                className='rounded-lg'
                 alt='profile'
               />
             </Link>
@@ -65,7 +65,7 @@ const Nav = () => {
                   }}
                   className='black_btn'
                 >
-                  Sign in
+                  Login
                 </button>
               ))}
           </>
@@ -77,7 +77,7 @@ const Nav = () => {
         {session?.user ? (
           <div className='flex'>
             <Image
-              src={session?.user.image}
+              src={session?.user?.image}
               width={45}
               height={45}
               className='rounded-lg'
@@ -109,7 +109,7 @@ const Nav = () => {
                   }}
                   className='mt-5 w-full black_btn'
                 >
-                  Sign Out
+                  Logout
                 </button>
               </div>
             )}
@@ -126,7 +126,7 @@ const Nav = () => {
                   }}
                   className='black_btn'
                 >
-                  Sign in
+                 Login
                 </button>
               ))}
           </>
