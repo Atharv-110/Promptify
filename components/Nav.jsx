@@ -24,8 +24,8 @@ const Nav = () => {
         <Image
           src='/assets/images/logo.svg'
           alt='logo'
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           className='object-contain'
         />
         <p className='logo_text'>Promptify</p>
