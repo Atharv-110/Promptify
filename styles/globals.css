@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
-
 .main {
   width: 100%;
   min-height: 100vh;
@@ -30,12 +26,16 @@
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
+.nav_glass {
+  @apply bg-gray-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-dark;
+}
+
 .black_btn {
-  @apply rounded-md border border-gray-dark bg-primary-black py-2 px-5 text-primary-white transition-all hover:bg-primary-white hover:text-primary-black text-center text-sm font-opensans flex items-center justify-center;
+  @apply rounded-md h-[40px] border border-gray-dark bg-primary-black py-1 px-5 text-primary-white transition-all hover:bg-transparent hover:text-primary-black text-center text-[14px] font-opensans flex items-center justify-center;
 }
 
 .outline_btn {
-  @apply rounded-md border border-gray-dark bg-transparent py-2 px-5 text-primary-black transition-all hover:bg-primary-black hover:text-primary-white text-center text-sm font-opensans flex items-center justify-center;
+  @apply rounded-md border h-[40px] border-gray-dark bg-transparent py-1 px-5 text-primary-black transition-all hover:bg-primary-black hover:text-primary-white text-center text-[14px] font-opensans flex items-center justify-center;
 }
 
 .head_text {
@@ -59,7 +59,7 @@
 }
 
 .search_input {
-  @apply block w-full rounded-lg border border-gray-100 bg-white py-2.5 font-opensans pl-5 pr-12 text-sm shadow-md font-medium transition-all focus:shadow-lg focus:scale-[1.015] focus:transition focus:outline-none focus:ring-0;
+  @apply block w-full rounded-lg border border-gray-100 bg-white py-2.5 font-opensans pl-5 pr-12 text-sm shadow-md font-medium transition-all focus:shadow-lg focus:scale-[1.010] focus:transition focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
@@ -76,7 +76,7 @@
 
 /* Feed Component */
 .feed {
-  @apply mt-10 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+  @apply mt-5 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
 /* Form Component */
@@ -90,7 +90,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-poppins font-medium text-2xl text-primary-black uppercase tracking-widest;
+  @apply max-sm:hidden font-poppins font-medium text-lg text-primary-black uppercase tracking-widest;
 }
 
 .dropdown {
