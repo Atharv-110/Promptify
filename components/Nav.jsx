@@ -20,6 +20,8 @@ const Nav = () => {
 
   return (
     <nav className="flex-between h-[60px] items-center fixed top-0 z-10 px-4 rounded-2xl mt-3 bg-slate-400 w-3/4 max-sm:w-[95%] max-sm:px-2 max-sm:h-[55px] nav_glass">
+      {/* We can implement menu bar from here */}
+      {/* <div className="sm:hidden">hello</div> */}
       <Link href="/" className="flex gap-1 flex-center">
         <Image
           src="/assets/images/logo.svg"
