@@ -24,7 +24,7 @@ const UserProfile = ({ params }) => {
 
   return (
     <Profile
-      name={userName}
+      name={`${userName}'s`}
       desc={`Step into ${userName}'s unique profile world. Discover extraordinary prompts and let the magic of their imagination inspire you.`}
       data={userPosts}
     />

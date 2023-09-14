@@ -5,7 +5,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
-
 import Form from "@components/Form";
 
 const CreatePrompt = () => {
@@ -51,13 +50,19 @@ const CreatePrompt = () => {
   };
 
   return (
-    <Form
-      type='Create'
-      post={post}
-      setPost={setPost}
-      submitting={submitting}
-      handleSubmit={createPrompt}
-    />
+    <>
+      {session?.user ? (
+        <Form
+          type="Create"
+          post={post}
+          setPost={setPost}
+          submitting={submitting}
+          handleSubmit={createPrompt}
+        />
+      ) : (
+        <h1 className="mt-[5.5rem]">Login to continue</h1>
+      )}
+    </>
   );
 };
 

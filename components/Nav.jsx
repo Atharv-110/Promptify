@@ -19,7 +19,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex-between h-[60px] items-center fixed top-0 z-10 px-4 rounded-lg mt-3 bg-slate-400 w-3/4 max-sm:w-[95%] nav_glass">
+    <nav className="flex-between h-[60px] items-center fixed top-0 z-10 px-4 rounded-2xl mt-3 bg-slate-400 w-3/4 max-sm:w-[95%] max-sm:px-2 max-sm:h-[55px] nav_glass">
       <Link href="/" className="flex gap-1 flex-center">
         <Image
           src="/assets/images/logo.svg"
@@ -78,8 +78,8 @@ const Nav = () => {
           <div className="flex">
             <Image
               src={session?.user?.image}
-              width={50}
-              height={50}
+              width={45}
+              height={45}
               className="rounded-full p-[2px] border border-gray-dark"
               alt="profile"
               onClick={() => setToggleDropdown(!toggleDropdown)}

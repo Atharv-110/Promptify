@@ -27,7 +27,7 @@
 }
 
 .nav_glass {
-  @apply bg-gray-200 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-dark;
+  @apply bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-[6px] bg-opacity-10 border border-gray-dark;
 }
 
 .black_btn {

@@ -1,5 +1,15 @@
-function NotFoundPage() {
-	return <h1>Page not found</h1>
+// import Link from 'next/link'
+// "use client"
+// import { useRouter } from 'next/router'
+ 
+export default function NotFound() {
+//   const router = useRouter();
+    return (
+    <div className='mt-[5.5rem]'>
+      <h1>404 : Page Not Found</h1>
+      {/* <p>Could not find requested resource</p> */}
+      {/* <button className='black_btn' onClick={() => router.push("/")} >Return Home</button> */}
+      {/* <Link href="/" className='black_btn'>Return Home</Link> */}
+    </div>
+  )
 }
-
-export default NotFoundPage
