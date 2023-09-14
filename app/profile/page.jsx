@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { SessionProvider, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
@@ -60,19 +60,13 @@ const MyProfile = () => {
   };
 
   return (
-    <>
-      {session?.user ? (
-        <Profile
-          name="My"
-          desc="Step into your bespoke profile page. Unleash outstanding prompts, inspiring others with the might of your creativity."
-          data={myPosts}
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
-        />
-      ) : (
-        <h1 className="mt-[5.5rem]">Login to continue</h1>
-      )}
-    </>
+    <Profile
+      name="My"
+      desc="Step into your bespoke profile page. Unleash outstanding prompts, inspiring others with the might of your creativity."
+      data={myPosts}
+      handleEdit={handleEdit}
+      handleDelete={handleDelete}
+    />
   );
 };
 
