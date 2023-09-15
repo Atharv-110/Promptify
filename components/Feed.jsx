@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from "react";
 
+// Loader
+import Loader from "@components/Loader";
+
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-10 max-sm:mt-4 prompt_layout'>
+    <div className="mt-10 max-sm:mt-4 prompt_layout">
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -21,16 +24,24 @@ const PromptCardList = ({ data, handleTagClick }) => {
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
 
-  // Search states
+  // loader states
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Searching states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {
-    const response = await fetch("/api/prompt");
-    const data = await response.json();
+    try {
+      const response = await fetch("/api/prompt");
+      const data = await response.json();
 
-    setAllPosts(data);
+      setAllPosts(data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -68,27 +79,41 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed'>
-      <form className='relative w-full flex-center'>
+    <section className="feed">
+      
+      <form className="relative w-full flex-center">
         <input
-          type='text'
-          placeholder='Search by tag, username or prompt'
+          type="text"
+          placeholder="Search by tag, username or prompt"
           value={searchText}
           onChange={handleSearchChange}
           required
-          className='search_input peer'
+          className="search_input peer"
         />
       </form>
 
       {/* All Prompts */}
-      {searchText ? (
-        <PromptCardList
-          data={searchedResults}
-          handleTagClick={handleTagClick}
-        />
-      ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
-      )}
+      <div>
+      {/* <Loader /> */}
+        {isLoading ? (
+          <Loader />
+        ) : searchText ? (
+          <PromptCardList
+            data={searchedResults}
+            handleTagClick={handleTagClick}
+          />
+        ) : (
+          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        )}
+        {/* {searchText ? (
+          <PromptCardList
+            data={searchedResults}
+            handleTagClick={handleTagClick}
+          />
+        ) : (
+          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        )} */}
+      </div>
     </section>
   );
 };

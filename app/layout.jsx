@@ -4,6 +4,9 @@ import Provider from "@components/Provider";
 import "@styles/globals.css";
 import { Toaster } from "react-hot-toast";
 
+// Next UI
+// import { NextUIProvider } from "@nextui-org/react";
+
 export const metadata = {
   title: "Promptify",
   description: "Discover, Share & Create AI-Driven Prompts",
@@ -11,7 +14,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <>
-    <html lang="en">
+    <html lang="en" className="light">
       <body>
         <Provider>
           <div className="main bg-primary-white"></div>
