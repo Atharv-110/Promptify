@@ -5,17 +5,20 @@ import { useState, useEffect } from "react";
 // Loader
 import Loader from "@components/Loader";
 
-import PromptCard from "./PromptCard";
+// Next UI components
+// import { Skeleton } from "@nextui-org/react";
+
+import PromptCard from "@components/PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
     <div className="mt-4 prompt_layout">
       {data.map((post) => (
-        <PromptCard
-          key={post._id}
-          post={post}
-          handleTagClick={handleTagClick}
-        />
+          <PromptCard
+            key={post._id}
+            post={post}
+            handleTagClick={handleTagClick}
+          />
       ))}
     </div>
   );
