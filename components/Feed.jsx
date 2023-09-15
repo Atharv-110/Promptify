@@ -80,7 +80,6 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      
       <form className="relative mt-4 w-full flex-center">
         <input
           type="text"
@@ -94,7 +93,7 @@ const Feed = () => {
 
       {/* All Prompts */}
       <div>
-      {/* <Loader /> */}
+        {/* <Loader /> */}
         {isLoading ? (
           <Loader />
         ) : searchText ? (
@@ -105,6 +104,8 @@ const Feed = () => {
         ) : (
           <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
         )}
+
+        {/* Previous version Code without loader */}
         {/* {searchText ? (
           <PromptCardList
             data={searchedResults}
