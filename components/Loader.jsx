@@ -3,16 +3,12 @@ import { Spinner } from "@nextui-org/react";
 
 const Loader = () => {
   return (
-    <div className="w-full p-[5rem] flex items-center justify-center">
+    <div className="w-full p-10 flex items-center justify-center">
       <Spinner
         classNames={{
-            wrapper: "w-[6rem] h-[6rem]",
-          base: "",
-          circle1: ""
-            // svg: "w-36 h-36 drop-shadow-md",
-        //   indicator: "stroke-white",
-        //   track: "stroke-white/10",
-        //   value: "text-3xl font-semibold text-white",
+          wrapper: "w-[5rem] h-[5rem]",
+          circle1: "border-b-gray-dark",
+          circle2: "border-b-gray-dark",
         }}
         color="default"
         size="lg"
