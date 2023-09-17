@@ -59,11 +59,32 @@ const Nav = () => {
           {toggleDropdownMenu && (
             <div className="dropdown_menu">
               <Link
+                href="/"
+                className="dropdown_link"
+                onClick={handleDropdownMenu}
+              >
+                Home
+              </Link>
+              <Link
                 href="/feed"
                 className="dropdown_link"
                 onClick={handleDropdownMenu}
               >
                 Feed
+              </Link>
+              <Link
+                href="/course"
+                className="dropdown_link"
+                onClick={handleDropdownMenu}
+              >
+                Course
+              </Link>
+              <Link
+                href="/Playground"
+                className="dropdown_link"
+                onClick={handleDropdownMenu}
+              >
+                Playground
               </Link>
             </div>
           )}
