@@ -90,15 +90,23 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-poppins font-medium text-lg text-primary-black uppercase tracking-widest;
+  @apply max-sm:hidden font-poppins font-medium text-[1.125rem] text-primary-black uppercase tracking-widest;
 }
 
 .dropdown {
   @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
 
+.dropdown_menu {
+  @apply absolute left-0 top-[57px] w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-start;
+}
+
 .dropdown_link {
   @apply text-sm font-opensans text-gray-700 hover:text-gray-500 font-medium;
+}
+
+.navbar_link {
+  @apply text-sm uppercase font-opensans text-gray-700 hover:text-gray-500 font-medium;
 }
 
 /* PromptCard Component */

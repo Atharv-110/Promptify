@@ -11,7 +11,7 @@ const Home = () => (
       Your cutting-edge prompting tool for exploring, crafting, and sharing
       ingenious prompts in the modern world of creativity and AI interaction.
     </p>
-    <Feed />
+    {/* <Feed /> */}
   </section>
 );
 
