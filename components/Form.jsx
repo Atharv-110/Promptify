@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
-    <section className='w-full mt-[5.5rem] max-w-full flex items-center	flex-col'>
+    <section className='w-full mt-4 max-w-full flex items-center	flex-col'>
       <h1 className='head_text text-left'>
         <span className='head_text_gradient'>{type} Prompt</span>
       </h1>

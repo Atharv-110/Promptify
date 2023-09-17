@@ -6,6 +6,8 @@ import { toast } from "react-hot-toast";
 
 import Form from "@components/Form";
 
+import UnderDev from "@components/UnderDev";
+
 const UpdatePrompt = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -65,6 +67,8 @@ const UpdatePrompt = () => {
   };
 
   return (
+    <div className="w-full mt-[5.5rem]">
+    <UnderDev />
     <Form
       type="Edit"
       post={post}
@@ -72,6 +76,7 @@ const UpdatePrompt = () => {
       submitting={submitting}
       handleSubmit={updatePrompt}
     />
+    </div>
   );
 };
 

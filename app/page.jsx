@@ -1,7 +1,8 @@
-import Feed from "@components/Feed";
+import UnderDev from "@components/UnderDev";
 
 const Home = () => (
   <section className="w-full mt-[5.5rem] flex-center flex-col">
+    <UnderDev />
     <h1 className="head_text text-center">
       Discover, Share & Create
       <br className="" />

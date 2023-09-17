@@ -7,6 +7,8 @@ import { toast } from "react-hot-toast";
 
 import Form from "@components/Form";
 
+import UnderDev from "@components/UnderDev";
+
 const CreatePrompt = () => {
   const router = useRouter();
   const { data: session } = useSession();
@@ -50,7 +52,8 @@ const CreatePrompt = () => {
   };
 
   return (
-    <>
+    <div className="mt-[5rem] w-full">
+      <UnderDev />
       {session?.user ? (
         <Form
           type="Create"
@@ -60,9 +63,9 @@ const CreatePrompt = () => {
           handleSubmit={createPrompt}
         />
       ) : (
-        <h1 className="mt-[5.5rem]">Login to continue</h1>
+        <h1 className="mt-4 font-opensans text-center">Login to continue</h1>
       )}
-    </>
+    </div>
   );
 };
 

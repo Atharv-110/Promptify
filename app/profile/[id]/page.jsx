@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Profile from "@components/Profile";
+import UnderDev from "@components/UnderDev";
 
 const UserProfile = ({ params }) => {
   const searchParams = useSearchParams();
@@ -23,11 +24,14 @@ const UserProfile = ({ params }) => {
   }, [params.id]);
 
   return (
-    <Profile
-      name={`${userName}'s`}
-      desc={`Step into ${userName}'s unique profile world. Discover extraordinary prompts and let the magic of their imagination inspire you.`}
-      data={userPosts}
-    />
+    <div className=" w-full mt-[5.5rem]">
+      <UnderDev />
+      <Profile
+        name={`${userName}'s`}
+        desc={`Step into ${userName}'s unique profile world. Discover extraordinary prompts and let the magic of their imagination inspire you.`}
+        data={userPosts}
+      />
+    </div>
   );
 };
 

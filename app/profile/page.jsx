@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
 
 import Profile from "@components/Profile";
+import UnderDev from "@components/UnderDev";
 
 const MyProfile = () => {
   const router = useRouter();
@@ -60,6 +61,8 @@ const MyProfile = () => {
   };
 
   return (
+    <div className="mt-[5.5rem]">
+    <UnderDev />
     <Profile
       name="My"
       desc="Step into your bespoke profile page. Unleash outstanding prompts, inspiring others with the might of your creativity."
@@ -67,6 +70,7 @@ const MyProfile = () => {
       handleEdit={handleEdit}
       handleDelete={handleDelete}
     />
+    </div>
   );
 };
 
