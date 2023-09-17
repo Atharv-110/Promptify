@@ -2,6 +2,9 @@
 # Promptify
 > Your cutting-edge prompting tool for exploring, crafting, and sharing ingenious prompts in the modern world of creativity and AI interaction.
 
+
+[More Updates Coming Soon...]
+
 # What is Promptify?
 1. This is a wide platform through which user can _**create, share, & discover prompts**_ to make their AI tool journey easy and robust.
 2. Promptify gives user the minimalist and better experience with easy to use UI.
