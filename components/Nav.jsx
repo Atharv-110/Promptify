@@ -80,7 +80,7 @@ const Nav = () => {
                 Course
               </Link>
               <Link
-                href="/Playground"
+                href="/playground"
                 className="dropdown_link"
                 onClick={handleDropdownMenu}
               >
