@@ -5,6 +5,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
+import { useDisclosure } from "@nextui-org/react";
+
+import LoginModal from "@components/Modals/LoginModal";
+
 const Nav = () => {
   const { data: session } = useSession();
 
@@ -13,6 +17,8 @@ const Nav = () => {
   const [toggleDropdownMenu, setToggleDropdownMenu] = useState(false);
 
   const [showNav, setShowNav] = useState(false);
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const handleDropdownMenu = () => {
     setShowNav(false);
@@ -28,6 +34,7 @@ const Nav = () => {
 
   return (
     <nav className="flex-between h-[60px] items-center fixed top-0 z-20 px-4 rounded-2xl mt-3 bg-slate-400 lg:w-[75%] max-sm:w-[95%] md:w-[95%] max-sm:px-3 max-sm:h-[55px] nav_glass">
+      <LoginModal isOpen={isOpen} onOpenChange={onOpenChange} />
       {/* We can implement menu bar from here */}
       <div className="sm:hidden flex relative">
         <div
@@ -112,6 +119,7 @@ const Nav = () => {
           <Link href="/playground" className="navbar_link">
             Playground
           </Link>
+          
         </div>
       </div>
 
@@ -139,19 +147,20 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            {providers &&
-              Object.values(providers).map((provider) => (
+            {/* {providers && */}
+              {/* // Object.values(providers).map((provider) => ( */}
                 <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
+                  // type="button"
+                  // key={provider.name}
+                  // onClick={() => {
+                  //   signIn(provider.id);
+                  // }}
                   className="black_btn"
+                  onClick={onOpen}
                 >
                   Login
                 </button>
-              ))}
+              {/* ))} */}
           </>
         )}
       </div>
@@ -221,5 +230,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-
