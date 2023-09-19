@@ -119,7 +119,6 @@ const Nav = () => {
           <Link href="/playground" className="navbar_link">
             Playground
           </Link>
-          
         </div>
       </div>
 
@@ -146,22 +145,9 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <>
-            {/* {providers && */}
-              {/* // Object.values(providers).map((provider) => ( */}
-                <button
-                  // type="button"
-                  // key={provider.name}
-                  // onClick={() => {
-                  //   signIn(provider.id);
-                  // }}
-                  className="black_btn"
-                  onClick={onOpen}
-                >
-                  Login
-                </button>
-              {/* ))} */}
-          </>
+          <button className="black_btn" onClick={onOpen}>
+            Login
+          </button>
         )}
       </div>
 
@@ -208,21 +194,9 @@ const Nav = () => {
             )}
           </div>
         ) : (
-          <>
-            {providers &&
-              Object.values(providers).map((provider) => (
-                <button
-                  type="button"
-                  key={provider.name}
-                  onClick={() => {
-                    signIn(provider.id);
-                  }}
-                  className="black_btn"
-                >
-                  Login
-                </button>
-              ))}
-          </>
+          <button className="black_btn" onClick={onOpen}>
+            Login
+          </button>
         )}
       </div>
     </nav>

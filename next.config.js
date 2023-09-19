@@ -6,6 +6,13 @@ const nextConfig = {
   },
   images: {
     domains: ['lh3.googleusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io"
+      }
+    ],
+    dangerouslyAllowSVG: true,
   },
   webpack(config) {
     config.experiments = {

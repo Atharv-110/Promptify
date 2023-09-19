@@ -61,7 +61,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="mt-[5.5rem]">
+    <div className="container">
     <UnderDev />
     <Profile
       name="My"

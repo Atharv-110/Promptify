@@ -5,8 +5,6 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  Button,
-  useDisclosure,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
