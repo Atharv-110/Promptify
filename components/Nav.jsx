@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 import { useDisclosure } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 
 import LoginModal from "@components/Modals/LoginModal";
 
@@ -145,9 +146,11 @@ const Nav = () => {
             </Link>
           </div>
         ) : (
-          <button className="black_btn" onClick={onOpen}>
-            Login
-          </button>
+          <Button className="black_btn" onPress={onOpen}>
+            {/* <button className="black_btn"> */}
+              Login
+            {/* </button> */}
+          </Button>
         )}
       </div>
 

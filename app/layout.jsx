@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 const RootLayout = ({ children }) => (
-  <>
+
     <html lang="en" className="light">
       <body>
         <Provider>
@@ -27,7 +27,6 @@ const RootLayout = ({ children }) => (
         </Provider>
       </body>
     </html>
-  </>
 );
 
 export default RootLayout;
