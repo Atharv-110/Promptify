@@ -5,9 +5,11 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
+  ModalFooter,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import Image from "next/image";
 
 export default function LoginModal({ isOpen, onOpen, onOpenChange }) {
   //   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -24,14 +26,25 @@ export default function LoginModal({ isOpen, onOpen, onOpenChange }) {
 
   return (
     <>
-      <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal className="bg-primary-white" backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                Sign in with Google
+              <ModalHeader className="flex items-center gap-1 border-b-2">
+                <Image
+                  src="/assets/images/logo.svg"
+                  alt="logo"
+                  width={30}
+                  height={30}
+                  priority={true}
+                  className="object-contain"
+                />
+                <p className="font-poppins font-medium text-[1.1rem] text-primary-black uppercase tracking-widest">
+                  Promptify
+                </p>
               </ModalHeader>
-              <ModalBody>
+              <ModalBody className="flex flex-col justify-center items-center py-12 px-2">
+                <h1 className="text-gray-dark text-center text-[0.9rem] font-opensans tracking-wide">Experience easy sign in with Promptify via Google</h1>
                 {providers &&
                   Object.values(providers).map((provider) => (
                     <button
@@ -41,12 +54,23 @@ export default function LoginModal({ isOpen, onOpen, onOpenChange }) {
                         signIn(provider.id);
                       }}
                       onPress={onClose}
-                      className="black_btn"
+                      className="w-[65%] lg:w-[55%] flex gap-3 px-4 py-2 rounded-xl justify-center items-center bg-primary-black"
                     >
-                      Login
+                      <Image
+                        className="w-[32px]"
+                        src="https://ik.imagekit.io/picg4q9lv/Promptify/google_logo.png?updatedAt=1695252105640"
+                        alt="google-logo"
+                        priority={true}
+                        width={200}
+                        height={200}
+                      />
+                      <p className="text-[0.85rem] font-opensans text-primary-white tracking-wider">Sign in with Google</p>
                     </button>
                   ))}
               </ModalBody>
+              <ModalFooter className="flex-start border-t-2">
+                <p className="text-[0.7rem] text-gray-dark font-poppins tracking-wide">Copyright 2023 Promptify</p>
+              </ModalFooter>
             </>
           )}
         </ModalContent>

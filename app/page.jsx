@@ -43,8 +43,9 @@ const Home = () => {
           <Image
             src="https://ik.imagekit.io/picg4q9lv/Promptify/hero_section_robot.svg?updatedAt=1695151435628"
             alt="robot-svg"
-            width={100}
-            height={100}
+            priority={false}
+            width={200}
+            height={200}
             className="w-[100%] lg:w-[65%]"
           />
         </div>
