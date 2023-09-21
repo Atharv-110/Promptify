@@ -39,11 +39,11 @@ const Home = () => {
             <button className="outline_btn">Explore</button>
           </div>
         </div>
-        <div className="w-1/2 flex justify-center lg:justify-end items-center">
+        <div className="w-1/2 flex-between lg:justify-end">
           <Image
             src="https://ik.imagekit.io/picg4q9lv/Promptify/hero_section_robot.svg?updatedAt=1695151435628"
             alt="robot-svg"
-            priority={false}
+            priority={true}
             width={200}
             height={200}
             className="w-[100%] lg:w-[65%]"

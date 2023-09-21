@@ -34,7 +34,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex-between h-[60px] items-center fixed top-0 z-20 px-4 rounded-2xl mt-3 bg-slate-400 lg:w-[75%] max-sm:w-[95%] md:w-[95%] max-sm:px-3 max-sm:h-[55px] nav_glass">
+    <nav className="flex-between h-[60px] fixed top-0 z-20 px-4 rounded-2xl mt-3 bg-slate-400 lg:w-[75%] max-sm:w-[95%] md:w-[95%] max-sm:px-3 max-sm:h-[55px] nav_glass">
       <LoginModal isOpen={isOpen} onOpenChange={onOpenChange} />
       {/* We can implement menu bar from here */}
       <div className="sm:hidden flex relative">

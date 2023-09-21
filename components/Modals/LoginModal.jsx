@@ -36,7 +36,6 @@ export default function LoginModal({ isOpen, onOpen, onOpenChange }) {
                   alt="logo"
                   width={30}
                   height={30}
-                  priority={true}
                   className="object-contain"
                 />
                 <p className="font-poppins font-medium text-[1.1rem] text-primary-black uppercase tracking-widest">
@@ -61,8 +60,8 @@ export default function LoginModal({ isOpen, onOpen, onOpenChange }) {
                         src="https://ik.imagekit.io/picg4q9lv/Promptify/google_logo.png?updatedAt=1695252105640"
                         alt="google-logo"
                         priority={true}
-                        width={200}
-                        height={200}
+                        width={100}
+                        height={100}
                       />
                       <p className="text-[0.85rem] font-opensans text-primary-white tracking-wider">Sign in with Google</p>
                     </button>

@@ -111,7 +111,7 @@
 }
 
 .navbar_link {
-  @apply text-sm uppercase font-opensans text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm uppercase font-opensans text-gray-700 hover:text-gray-500 font-medium tracking-wide;
 }
 
 /* PromptCard Component */
