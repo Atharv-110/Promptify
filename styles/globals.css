@@ -116,7 +116,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  @apply w-full h-fit flex-1 break-inside-avoid rounded-lg border-gray-100 shadow-md bg-white p-6 pb-4 transition-all hover:shadow-lg hover:transition-all hover:scale-[1.02]  md:w-[360px];
+  @apply w-full h-fit flex-1 break-inside-avoid rounded-lg border-gray-100 shadow-md bg-white p-6 pb-4 transition-all hover:shadow-lg hover:scale-[1.03]  md:w-[360px];
 }
 
 .flex-center {

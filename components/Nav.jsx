@@ -148,7 +148,7 @@ const Nav = () => {
         ) : (
           <Button className="black_btn" onPress={onOpen}>
             {/* <button className="black_btn"> */}
-              Login
+            Login
             {/* </button> */}
           </Button>
         )}

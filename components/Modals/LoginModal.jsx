@@ -42,7 +42,7 @@ export default function LoginModal({ isOpen, onOpen, onOpenChange }) {
                   Promptify
                 </p>
               </ModalHeader>
-              <ModalBody className="flex flex-col justify-center items-center py-12 px-2">
+              <ModalBody className="flex flex-col justify-center gap-8 items-center py-12 px-2">
                 <h1 className="text-gray-dark text-center text-[0.9rem] font-opensans tracking-wide">Experience easy sign in with Promptify via Google</h1>
                 {providers &&
                   Object.values(providers).map((provider) => (
