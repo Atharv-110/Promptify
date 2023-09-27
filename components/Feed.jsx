@@ -81,7 +81,7 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form className="mt-4 w-full flex flex-col items-center lg:items-stretch lg:flex-row gap-3 lg:gap-0 search_input">
+      <form className="mt-4 w-full flex flex-col items-center lg:items-stretch lg:flex-row gap-2 lg:gap-0 search_input">
         <input
           type="text"
           placeholder="Search by tag, username or prompt"
@@ -91,16 +91,16 @@ const Feed = () => {
           className="w-full p-3 px-4 shadow-md bg-white lg:shadow-none rounded-lg lg:rounded-e-none  outline-none border-none lg:w-[75%] font-opensans text-sm font-medium"
         />
         <Select
-          label="Tags"
-          placeholder="Select Tag"
+          label="Categories"
+          placeholder="Select Category"
           radius="sm"
-          className="w-full outline-none border-none rounded-lg lg:w-[25%]"
+          className="w-[90%] outline-none border-none rounded-lg lg:w-[25%]"
           classNames={{
             base: "bg-white",
-            label: "text-[0.65rem]",
+            label: "text-[0.7rem]",
             trigger:
               "bg-primary-black shadow-none text-primary-white data-[hover=true]:bg-primary-black lg:rounded-s-none lg:rounded-e-lg",
-            value: "capitalize text-[0.80rem]",
+            value: "capitalize text-[0.78rem]",
           }}
           size="sm"
         >
