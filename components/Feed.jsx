@@ -1,36 +1,20 @@
-"use client";
-
 import { useState, useEffect } from "react";
-
-// Loader
+import { Select, SelectItem } from "@nextui-org/react";
+import PromptCard from "@components/PromptCard";
 import Loader from "@components/Loader";
 
-// Next UI components
-// import { Skeleton } from "@nextui-org/react";
-
-import PromptCard from "@components/PromptCard";
-
-const PromptCardList = ({ data, handleTagClick }) => {
-  return (
-    <div className="mt-4 prompt_layout">
-      {data.map((post) => (
-          <PromptCard
-            key={post._id}
-            post={post}
-            handleTagClick={handleTagClick}
-          />
-      ))}
-    </div>
-  );
-};
+const PromptCardList = ({ data, handleTagClick }) => (
+  <div className="prompt_layout">
+    {data.map((post) => (
+      <PromptCard key={post._id} post={post} handleTagClick={handleTagClick} />
+    ))}
+  </div>
+);
 
 const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
-
-  // loader states
+  const [uniqueTagData, setUniqueTagData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  // Searching states
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
@@ -39,11 +23,12 @@ const Feed = () => {
     try {
       const response = await fetch("/api/prompt");
       const data = await response.json();
-
+      const uniqueData = filterDuplicates(data);
+      setUniqueTagData(uniqueData);
       setAllPosts(data);
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -52,7 +37,7 @@ const Feed = () => {
   }, []);
 
   const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    const regex = new RegExp(searchtext, "i");
     return allPosts.filter(
       (item) =>
         regex.test(item.creator.username) ||
@@ -65,7 +50,6 @@ const Feed = () => {
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
 
-    // debounce method
     setSearchTimeout(
       setTimeout(() => {
         const searchResult = filterPrompts(e.target.value);
@@ -81,22 +65,58 @@ const Feed = () => {
     setSearchedResults(searchResult);
   };
 
+  const filterDuplicates = (data) => {
+    const uniqueData = [];
+    const seen = new Set();
+
+    data.forEach((item) => {
+      if (!seen.has(item.tag)) {
+        seen.add(item.tag);
+        uniqueData.push(item);
+      }
+    });
+
+    return uniqueData;
+  };
+
   return (
     <section className="feed">
-      <form className="relative mt-4 w-full flex-center">
+      <form className="mt-4 w-full flex flex-col items-center lg:items-stretch lg:flex-row gap-3 lg:gap-0 search_input">
         <input
           type="text"
           placeholder="Search by tag, username or prompt"
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="search_input peer"
+          className="w-full p-3 px-4 shadow-md bg-white lg:shadow-none rounded-lg lg:rounded-e-none  outline-none border-none lg:w-[75%] font-opensans text-sm font-medium"
         />
+        <Select
+          label="Tags"
+          placeholder="Select Tag"
+          radius="sm"
+          className="w-full outline-none border-none rounded-lg lg:w-[25%]"
+          classNames={{
+            base: "bg-white",
+            label: "text-[0.65rem]",
+            trigger:
+              "bg-primary-black shadow-none text-primary-white data-[hover=true]:bg-primary-black lg:rounded-s-none lg:rounded-e-lg",
+            value: "capitalize text-[0.80rem]",
+          }}
+          size="sm"
+        >
+          {uniqueTagData.map((post) => (
+            <SelectItem
+              className="capitalize"
+              key={post._id}
+              onClick={() => handleTagClick(post.tag)}
+            >
+              {post?.tag}
+            </SelectItem>
+          ))}
+        </Select>
       </form>
 
-      {/* All Prompts */}
       <div>
-        {/* <Loader /> */}
         {isLoading ? (
           <Loader />
         ) : searchText ? (
@@ -107,16 +127,6 @@ const Feed = () => {
         ) : (
           <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
         )}
-
-        {/* Previous version Code without loader */}
-        {/* {searchText ? (
-          <PromptCardList
-            data={searchedResults}
-            handleTagClick={handleTagClick}
-          />
-        ) : (
-          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
-        )} */}
       </div>
     </section>
   );

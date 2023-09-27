@@ -64,7 +64,7 @@
 }
 
 .search_input {
-  @apply block w-full rounded-lg border border-gray-100 bg-white py-2.5 font-opensans pl-5 pr-12 text-sm shadow-md font-medium transition-all focus:shadow-lg focus:scale-[1.010] focus:transition focus:outline-none focus:ring-0;
+  @apply w-full rounded-lg lg:border bg-white border-gray-200 bg-transparent p-0 font-opensans text-sm lg:shadow-md font-medium text-primary-black transition-all;
 }
 
 .copy_btn {
@@ -81,7 +81,7 @@
 
 /* Feed Component */
 .feed {
-  @apply mt-5 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+  @apply mt-5 mx-auto w-full max-w-full lg:max-w-[60%] flex justify-center items-center flex-col gap-2;
 }
 
 /* Form Component */
