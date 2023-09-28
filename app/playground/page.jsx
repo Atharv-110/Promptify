@@ -95,12 +95,15 @@ const Playground = () => {
     <div className="container">
       {/* <UnderDev /> */}
       {session?.user ? (
-        <div className="w-full h-[75vh] flex flex-col items-center relative">
-          <h1 className="text-center font-opensans my-4">
-            AI Playground Coming Soon...
+        <div className="w-full h-[86vh] flex flex-col items-center relative">
+          <h1 className="head_text text-left">
+            <span className="head_text_gradient">AI Playground</span>
           </h1>
+          <p className="desc text-center max-w-md mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex ipsum maxime totam perferendis quis.
+          </p>
 
-          <div className="w-full h-[55vh] overflow-y-scroll bg-white rounded-lg p-1 lg:p-4 shadow-md">
+          <div className="w-full h-[63vh] lg:h-[58vh] overflow-y-scroll bg-white rounded-lg p-1 lg:p-4 shadow-md">
             {messages.slice(1).map((message, index) => (
               <div key={index.toString()}>
                 <div className="flex p-3 lg:p-4 justify-start items-start">
@@ -137,7 +140,7 @@ const Playground = () => {
             ))}
           </div>
 
-          <div className="z-20 absolute bottom-0 flex-between w-full bg-white shadow-md rounded-lg px-2 lg:px-4 py-2">
+          <div className="z-20 absolute bottom-2 flex-between w-full bg-white shadow-md rounded-lg px-2 lg:px-4 py-2">
             <Image
               src="https://ik.imagekit.io/picg4q9lv/Promptify/promptify_logo.svg?updatedAt=1695900795786"
               className="w-[30px]"
