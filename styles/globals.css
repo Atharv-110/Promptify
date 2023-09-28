@@ -81,7 +81,7 @@
 
 /* Feed Component */
 .feed {
-  @apply mt-5 mx-auto w-full max-w-full lg:max-w-[60%] flex justify-center items-center flex-col gap-2;
+  @apply mt-5 mx-auto w-full max-w-full lg:max-w-[55%] flex justify-center items-center flex-col gap-2;
 }
 
 /* Form Component */
@@ -143,7 +143,7 @@
 /* Custom scrollbar */
 /* width */
 ::-webkit-scrollbar {
-  @apply w-[3px] lg:w-[5px]
+  @apply w-[3px] lg:w-[5px];
 }
 
 /* Track */
