@@ -95,7 +95,7 @@ const Playground = () => {
     <div className="container">
       {/* <UnderDev /> */}
       {session?.user ? (
-        <div className="w-full h-[84vh] flex flex-col items-center relative">
+        <div className="w-full h-[82vh] lg:h-[85vh] flex flex-col items-center relative">
           <h1 className="head_text text-left">
             <span className="head_text_gradient">AI Playground</span>
           </h1>
@@ -103,7 +103,7 @@ const Playground = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex ipsum maxime totam perferendis quis.
           </p>
 
-          <div className="w-full h-[60vh] lg:h-[58vh] overflow-y-scroll bg-white rounded-lg p-1 lg:p-4 shadow-md">
+          <div className="w-full h-[58vh] lg:h-[57vh] overflow-y-scroll bg-white rounded-lg p-1 lg:p-4 shadow-md">
             {messages.slice(1).map((message, index) => (
               <div key={index.toString()}>
                 <div className="flex p-3 lg:p-4 justify-start items-start">
