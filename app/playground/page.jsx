@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
 import UnderDev from "@components/UnderDev";
 import Loader from "@components/Loader";
@@ -92,75 +93,98 @@ const Playground = () => {
 
   return (
     <div className="container">
-      <UnderDev />
+      {/* <UnderDev /> */}
       {session?.user ? (
-        <div className="w-full">
-          <h1 className="text-center font-opensans mt-4">
+        <div className="w-full h-[75vh] flex flex-col items-center relative">
+          <h1 className="text-center font-opensans my-4">
             AI Playground Coming Soon...
           </h1>
 
-          <div className="bg-slate-400">
+          <div className="w-full h-[55vh] overflow-y-scroll bg-white rounded-lg p-1 lg:p-4 shadow-md">
             {messages.slice(1).map((message, index) => (
-              <div className="mx-2 my-4" key={index.toString()}>
-                {message.content}
+              <div key={index.toString()}>
+                <div className="flex p-3 lg:p-4 justify-start items-start">
+                  <div className="w-[30px] lg:w-[5%] flex justify-center mr-2">
+                    {message.role === "assistant" ? (
+                      <Image
+                        src="https://ik.imagekit.io/picg4q9lv/Promptify/promptify_logo.svg?updatedAt=1695900795786"
+                        width={50}
+                        height={50}
+                        className="w-[40px] rounded-full"
+                        alt="promptify-logo"
+                      />
+                    ) : (
+                      <Image
+                        src={session?.user?.image}
+                        width={50}
+                        height={50}
+                        className="w-[40px] rounded-full"
+                        alt="user-img"
+                      />
+                    )}
+                  </div>
+                  {/* {loadingStatus && (
+                  <div className="mx-2 mt-4">
+                    <Loader />
+                  </div>
+                )} */}
+                  <p className="w-[calc(100%-30px)] lg:w-[95%] font-opensans text-sm lg:text-justify">
+                    {message.content}
+                  </p>
+                </div>
+                <hr />
               </div>
             ))}
           </div>
 
-          {loadingStatus && (
-            <div className="mx-2 mt-4">
-              <Loader />
-            </div>
-          )}
-
-          {!loadingStatus && messages.length > 1 && (
-            <div className="mt-4 flex justify-center">
-              <button
-                className="h-11 rounded-md border-2 border-gray-500
-                         bg-gray-500 px-1 py-1 hover:border-gray-600 
-                         hover:bg-gray-600"
-                onClick={onClick}
-              >
-                <p className="font-bold text-white">New chat</p>
-              </button>
-            </div>
-          )}
-          <div
-            className="fixed bottom-0 z-10 w-full max-w-full bg-white/75
-                     sm:max-w-3xl"
-          ></div>
-
-          <div
-            className="z-20 w-full max-w-full 
-                     sm:max-w-3xl"
-          >
-            <form className="mx-2 flex items-end" onSubmit={onSubmit}>
-              <textarea
-                className="mr-2 grow resize-none rounded-md border-2 
-                       border-gray-400 p-2 focus:border-blue-600 
-                         focus:outline-none"
+          <div className="z-20 absolute bottom-0 flex-between w-full bg-white shadow-md rounded-lg px-2 lg:px-4 py-2">
+            <Image
+              src="https://ik.imagekit.io/picg4q9lv/Promptify/promptify_logo.svg?updatedAt=1695900795786"
+              className="w-[30px]"
+              width={30}
+              height={30}
+              alt="promptify-logo"
+            />
+            <form
+              className="w-[calc(100%-40px)] flex justify-between items-center"
+              onSubmit={onSubmit}
+            >
+              <input
+                className="border-none outline-none w-[90%] font-poppins text-sm text-primary-black"
+                type="text"
                 value={newMessageText}
                 onChange={onChange}
                 onKeyDown={onKeyDown}
-                placeholder="Why is the sky blue?"
+                placeholder="Write your prompt here..."
               />
 
               {loadingStatus ? (
                 <button
-                  className="h-11 rounded-md border-2 border-blue-400
-                         bg-blue-400 px-1 py-1"
+                  className="rounded-md w-[50px] lg:w-[75px] border flex justify-center lg:justify-evenly items-center bg-primary-black px-1 py-2 text-primary-white transition-all text-center text-[14px] font-opensans"
                   disabled
                 >
-                  <p className="font-bold text-white">Send</p>
+                  <Image
+                    src="https://ik.imagekit.io/picg4q9lv/Promptify/assistant_stars.svg?updatedAt=1695419005659"
+                    width={25}
+                    height={25}
+                    className="w-[20px]"
+                    alt="star_img"
+                  />
+                  <p className="hidden lg:block tracking-wide">Start</p>
                 </button>
               ) : (
                 <button
-                  className="h-11 rounded-md border-2 border-blue-600
-                         bg-blue-600 px-1 py-1 hover:border-blue-700 
-                         hover:bg-blue-700"
+                  className="rounded-md w-[50px] lg:w-[75px] border flex justify-center lg:justify-evenly items-center bg-primary-black px-1 py-2 text-primary-white transition-all text-center text-[14px] font-opensans"
                   type="submit"
                 >
-                  <p className="font-bold text-white">Send</p>
+                  <Image
+                    src="https://ik.imagekit.io/picg4q9lv/Promptify/assistant_stars.svg?updatedAt=1695419005659"
+                    width={25}
+                    height={25}
+                    className="w-[20px]"
+                    alt="star_img"
+                  />
+                  <p className="hidden lg:block tracking-wide">Start</p>
                 </button>
               )}
             </form>
