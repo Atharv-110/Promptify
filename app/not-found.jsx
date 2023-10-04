@@ -5,7 +5,7 @@
 export default function NotFound() {
 //   const router = useRouter();
     return (
-    <div className='w-full mt-[5.5rem]'>
+    <div className='container w-full mt-[5.5rem]'>
       <h1>404 : Page Not Found</h1>
       {/* <p>Could not find requested resource</p> */}
       {/* <button className='black_btn' onClick={() => router.push("/")} >Return Home</button> */}

@@ -41,12 +41,20 @@ const Home = () => {
         </div>
         <div className="w-1/2 flex-between lg:justify-end">
           <Image
-            src="https://ik.imagekit.io/picg4q9lv/Promptify/hero_section_robot.svg?updatedAt=1695151435628"
+            src="https://ik.imagekit.io/picg4q9lv/Promptify/hero_section_robot_laptop.svg?updatedAt=1696440955200"
             alt="robot-svg"
             priority={true}
             width={200}
             height={200}
-            className="w-[100%] lg:w-[65%]"
+            className="hidden lg:block md:block w-[100%] lg:w-[65%]"
+          />
+          <Image
+            src="https://ik.imagekit.io/picg4q9lv/Promptify/hero_section_robot_mobile.svg?updatedAt=1696440954381"
+            alt="robot-svg"
+            priority={true}
+            width={200}
+            height={200}
+            className="lg:hidden md:hidden w-[100%]"
           />
         </div>
       </div>
