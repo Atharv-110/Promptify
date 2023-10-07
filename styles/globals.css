@@ -22,7 +22,7 @@
 
 /* Common Classes */
 .container {
-  @apply w-full mt-24 mb-2;
+  @apply lg:w-[95%] w-full mx-auto mt-24 mb-2;
 }
 
 /* Tailwind Styles */
@@ -44,7 +44,7 @@
 }
 
 .head_text {
-  @apply text-7xl font-semibold leading-[1.15] text-primary-black sm:text-6xl max-sm:text-4xl;
+  @apply text-7xl font-semibold leading-[1.15] font-opensans text-primary-black sm:text-6xl max-sm:text-4xl;
 }
 
 .gray_gradient {

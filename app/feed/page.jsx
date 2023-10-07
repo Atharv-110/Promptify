@@ -4,11 +4,9 @@ import AiButton from "@components/AiButton";
 
 const FeedPage = () => {
   return (
-    <section className="w-full mt-[5.5rem] flex-center flex-col">
-      <h1 className="head_text text-center">
-        Discover, Share & Create
-        <br className="" />
-        <span className="gray_gradient text-center">AI-Driven Prompts</span>
+    <section className="container flex-center flex-col">
+      <h1 className="head_text text-left">
+        <span className="head_text_gradient">Feed.</span>
       </h1>
       <p className="desc text-center">
         Your cutting-edge prompting tool for exploring, crafting, and sharing

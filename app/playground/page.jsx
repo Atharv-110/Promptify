@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import UnderDev from "@components/UnderDev";
 import Loader from "@components/Loader";
 
 const Playground = () => {
@@ -97,7 +96,7 @@ const Playground = () => {
       {session?.user ? (
         <div className="w-full h-[82vh] lg:h-[85vh] flex flex-col items-center relative">
           <h1 className="head_text text-left">
-            <span className="head_text_gradient">AI Playground</span>
+            <span className="head_text_gradient">Playground.</span>
           </h1>
           <p className="desc text-center max-w-md mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex ipsum maxime totam perferendis quis.
